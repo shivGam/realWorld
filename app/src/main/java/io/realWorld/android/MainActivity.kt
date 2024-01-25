@@ -17,6 +17,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import io.realWorld.android.databinding.ActivityMainBinding
 import io.realWorld.android.ui.auth.AuthViewModel
+import io.realworld.api.models.entities.User
 
 class MainActivity : AppCompatActivity() {
 
@@ -49,9 +50,19 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         authViewModel.user.observe(this,) { user ->
+            updateDrawer(user)
             Toast.makeText(this, "Logged in as ${user?.username}", Toast.LENGTH_SHORT).show()
+            navController.navigateUp()
         }
 
+    }
+    private fun updateDrawer(user: User?){
+        when(user) {
+            is User -> {
+                binding.navView.menu.clear()
+                binding.navView.inflateMenu(R.menu.activity_main_logged_in)
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
