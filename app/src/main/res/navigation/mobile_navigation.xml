@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_feed">
+
+    <fragment
+        android:id="@id/nav_feed"
+        android:name="io.realWorld.android.ui.feed.GlobalFeedFragment"
+        android:label="Feed"
+        tools:layout="@layout/feed_fragment"/>
+    <fragment
+        android:id="@+id/nav_signup"
+        android:name="io.realWorld.android.ui.auth.SignUpFragment"
+        android:label="SignUp"
+        tools:layout="@layout/fragment_signup">
+
+        <action
+            android:id="@+id/action_nav_signup_to_nav_login"
+            app:destination="@id/nav_login" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="io.realWorld.android.ui.auth.LogInFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_nav_login_to_nav_signup"
+            app:destination="@id/nav_signup" />
+    </fragment>
+
+</navigation>
