@@ -19,7 +19,7 @@ interface RealWorldAPI {
         @Body userCreds: SignupRequest
     ):Response<UserResponse>
 
-    @POST("users")
+    @POST("users/login")
     suspend fun loginUser(
         @Body userCreds: LoginUserRequest
     ):Response<UserResponse>
