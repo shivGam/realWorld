@@ -80,7 +80,7 @@
                 android:drawableRight="@drawable/ic_right"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:id="@+id/btnLogin"
+                android:id="@+id/btnSignup"
                 android:text="SignUp"
                 android:textSize="18sp"
                 android:textColor="@color/white"

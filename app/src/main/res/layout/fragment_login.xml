@@ -76,10 +76,11 @@
                 app:cornerRadius = "10dp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
     <TextView
         android:id="@+id/tvSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:text="@string/gotoSignup"/>
+        android:text="@string/gotoSignup"
+        android:textColor="@color/white" />
 </LinearLayout>

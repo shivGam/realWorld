@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         authViewModel.user.observe(this,) { user ->
             updateDrawer(user)
             Toast.makeText(this, "Logged in as ${user?.username}", Toast.LENGTH_SHORT).show()
-            navController.navigateUp()
+            navController.navigate(R.id.nav_feed)
         }
 
     }

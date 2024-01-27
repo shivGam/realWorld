@@ -14,7 +14,7 @@ class RealWorldTest {
     @Test
     fun `GET Articles`() {
         runBlocking {
-            val articles = realworldclient.api.getArticles()
+            val articles = realworldclient.publicApi.getArticles()
             assertNotNull(articles.body()?.articles)
         }
     }
@@ -22,7 +22,7 @@ class RealWorldTest {
     @Test
     fun `GET Articles by Authors`() {
         runBlocking {
-            val articles = realworldclient.api.getArticles(author = "Ping Sokołowski")
+            val articles = realworldclient.publicApi.getArticles(author = "Ping Sokołowski")
             assertNotNull(articles.body()?.articles)
         }
     }
@@ -30,7 +30,7 @@ class RealWorldTest {
     @Test
     fun `GET Articles by Tag`() {
         runBlocking {
-            val articles = realworldclient.api.getArticles(tag = "facilis")
+            val articles = realworldclient.publicApi.getArticles(tag = "facilis")
             assertNotNull(articles.body()?.articles)
         }
 
@@ -44,7 +44,7 @@ class RealWorldTest {
                     "rand_user_${Random.nextInt( 99,  999)}"
             )
             runBlocking {
-                val test= realworldclient.api.signupUsers(SignupRequest(userCreds))
+                val test= realworldclient.publicApi.signupUsers(SignupRequest(userCreds))
                 assertEquals(userCreds.username,test.body()?.user?.username)
             }
         }
