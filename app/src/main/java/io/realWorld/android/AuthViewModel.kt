@@ -1,4 +1,4 @@
-package io.realWorld.android.ui.auth
+package io.realWorld.android
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

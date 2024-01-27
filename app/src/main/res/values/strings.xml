@@ -9,9 +9,10 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_feed">Feed</string>
+    <string name="menu_feed">Home</string>
     <string name="realworld">realWorld.</string>
     <string name="gotoLogin">Already have an Account? Go to Login</string>
     <string name="gotoSignup">Don\'t have an account ? Go to register</string>
     <string name="get_in">SignUp / Login</string>
+    <string name="nav_feed">Home</string>
 </resources>

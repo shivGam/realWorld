@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/globalFragment"
+    android:id="@+id/feed_navigation">
+
+    <fragment
+        android:id="@+id/globalFragment"
+        android:name="io.realWorld.android.ui.feed.GlobalFeedFragment"
+        android:label="GlobalFeedFragment" />
+    <fragment
+        android:id="@+id/myFeedFragment"
+        android:name="io.realWorld.android.ui.feed.MyFeedFragment"
+        android:label="MyFeedFragment" />
+    <action
+        android:id="@+id/gotoGlobalFragment"
+        app:destination="@id/globalFragment"
+        app:popUpTo="@id/feed_navigation"
+        app:enterAnim="@anim/nav_default_pop_enter_anim"
+        app:exitAnim="@anim/nav_default_pop_exit_anim" />
+    <action
+        android:id="@+id/gotoMyFeedFragment"
+        app:popUpTo="@id/feed_navigation"
+        app:destination="@id/myFeedFragment"
+        app:enterAnim="@anim/nav_default_pop_enter_anim"
+        app:exitAnim="@anim/nav_default_pop_exit_anim" />
+
+</navigation>
