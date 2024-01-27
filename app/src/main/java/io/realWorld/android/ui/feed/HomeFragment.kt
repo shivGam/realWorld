@@ -17,7 +17,6 @@ import io.realworld.api.models.entities.User
 
 class HomeFragment: Fragment() {
 
-
     private var _binding: FragmentHomeBinding? = null
     private var navController: NavController? = null
     private lateinit var authViewModel: AuthViewModel
@@ -36,10 +35,7 @@ class HomeFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         authViewModel = ViewModelProvider(requireActivity())[(AuthViewModel::class.java)]
-
-
-        navController =
-            _binding?.let { Navigation.findNavController(it.root.findViewById(R.id.homeFragmentNavHost)) }
+        navController = _binding?.let { Navigation.findNavController(it.root.findViewById(R.id.homeFragmentNavHost)) }
         _binding?.homeTabLayout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 when (tab?.position) {
@@ -50,13 +46,14 @@ class HomeFragment: Fragment() {
                         authViewModel.user.observe(this@HomeFragment) { user ->
                             showFragment=true
                         }
-                        if(showFragment) {
-                            navController?.navigate(R.id.gotoMyFeedFragment)
-                        }
-                        else
-                        {
-                            navController?.navigate(R.id.gotoLoginFragment)
-                        }
+                        navController?.navigate(R.id.gotoMyFeedFragment)
+//                        if(showFragment) {
+//                            navController?.navigate(R.id.gotoMyFeedFragment)
+//                        }
+//                        else
+//                        {
+//                            navController?.navigate(R.id.gotoLoginFragment)
+//                        }
                     }
                     else -> throw IllegalArgumentException("Invalid position")
                 }

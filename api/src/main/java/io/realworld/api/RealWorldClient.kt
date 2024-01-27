@@ -29,6 +29,7 @@ object RealWorldClient {
         .baseUrl("https://api.realworld.io/api/")
         .addConverterFactory(MoshiConverterFactory.create())
         .client(okHttpBuilder.build())
+        .client(okHttpBuilder.addInterceptor(authInterceptor).build())
         .build()
 
     val publicApi = retrofit.create(RealWorldAPI::class.java)

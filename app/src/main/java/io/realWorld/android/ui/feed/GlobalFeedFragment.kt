@@ -25,13 +25,16 @@ class GlobalFeedFragment :Fragment() {
         _binding?.feedRecycler?.layoutManager = LinearLayoutManager(context)
         feedAdapter = ArticleFeedAdapter()
         _binding?.feedRecycler?.adapter = feedAdapter
+        return _binding?.root
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         viewModel.fetchGlobalFeed()
 
         viewModel.feed.observe(viewLifecycleOwner) {
             feedAdapter.submitList(it)
         }
-        return _binding?.root
     }
 
     override fun onDestroyView() {
