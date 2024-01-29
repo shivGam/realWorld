@@ -15,4 +15,5 @@
     <string name="gotoSignup">Don\'t have an account ? Go to register</string>
     <string name="get_in">SignUp / Login</string>
     <string name="nav_feed">Home</string>
+    <string name="menu_profile">Update Profile</string>
 </resources>

@@ -9,6 +9,10 @@
             android:icon="@drawable/ic_feed"
             android:title="@string/menu_feed"/>
         <item
+            android:id="@+id/nav_profile_update"
+            android:icon="@drawable/ic_profile"
+            android:title="@string/menu_profile"/>
+        <item
             android:id="@+id/logout"
             android:icon="@drawable/ic_login"
             android:title="Logout"/>

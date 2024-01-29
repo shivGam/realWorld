@@ -29,4 +29,10 @@
             app:destination="@id/nav_signup" />
     </fragment>
 
+    <fragment
+        android:id="@id/nav_profile_update"
+        android:name="io.realWorld.android.ui.profile.ProfileUpdateFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile_update"/>
+
 </navigation>
