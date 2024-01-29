@@ -24,5 +24,15 @@
         app:destination="@id/myFeedFragment"
         app:enterAnim="@anim/nav_default_pop_enter_anim"
         app:exitAnim="@anim/nav_default_pop_exit_anim" />
+    <fragment
+        android:id="@+id/logInFragment2"
+        android:name="io.realWorld.android.ui.auth.LogInFragment"
+        android:label="LogInFragment" />
+    <action
+        android:id="@+id/gotoLoginFragment2"
+        app:popUpTo="@id/feed_navigation"
+        app:destination="@id/logInFragment2"
+        app:enterAnim="@anim/nav_default_pop_enter_anim"
+        app:exitAnim="@anim/nav_default_pop_exit_anim" />
 
 </navigation>

@@ -46,14 +46,14 @@ class HomeFragment: Fragment() {
                         authViewModel.user.observe(this@HomeFragment) { user ->
                             showFragment=true
                         }
-                        navController?.navigate(R.id.gotoMyFeedFragment)
-//                        if(showFragment) {
-//                            navController?.navigate(R.id.gotoMyFeedFragment)
-//                        }
-//                        else
-//                        {
-//                            navController?.navigate(R.id.gotoLoginFragment)
-//                        }
+
+                        if(showFragment) {
+                            navController?.navigate(R.id.gotoMyFeedFragment)
+                        }
+                        else
+                        {
+                            navController?.navigate(R.id.gotoLoginFragment2)
+                        }
                     }
                     else -> throw IllegalArgumentException("Invalid position")
                 }

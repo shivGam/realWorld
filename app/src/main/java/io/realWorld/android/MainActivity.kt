@@ -2,6 +2,8 @@ package io.realWorld.android
 
 import android.os.Bundle
 import android.view.Menu
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController

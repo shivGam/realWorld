@@ -6,6 +6,7 @@
     android:background="@color/black"
     android:gravity="bottom"
     android:orientation="vertical"
+    android:id="@+id/nav_header"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="32dp"
     android:paddingRight="@dimen/activity_horizontal_margin"
