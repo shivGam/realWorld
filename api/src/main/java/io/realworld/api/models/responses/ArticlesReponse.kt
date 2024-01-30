@@ -6,7 +6,7 @@ import com.squareup.moshi.JsonClass
 import io.realworld.api.models.entities.Article
 
 @JsonClass(generateAdapter = true)
-data class ArticlesReponse(
+data class ArticlesResponse(
     @Json(name = "articles")
     val articles: List<Article>,
     @Json(name = "articlesCount")

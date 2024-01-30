@@ -2,9 +2,7 @@ package io.realworld.api.services
 
 import io.realworld.api.models.requests.LoginUserRequest
 import io.realworld.api.models.requests.SignupRequest
-import io.realworld.api.models.responses.ArticlesReponse
-import io.realworld.api.models.responses.TagResponse
-import io.realworld.api.models.responses.UserResponse
+import io.realworld.api.models.responses.*
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -29,12 +27,12 @@ interface RealWorldAPI {
         @Query("author") author:String? =null,
         @Query("favourited") favourited :String?=null,
         @Query("tag") tag : String?=null,
-    ): Response<ArticlesReponse>
+    ): Response<ArticlesResponse>
 
     @GET("articles/{slug}")
     suspend fun getArticlesBySlug(
         @Path("slug") slug :String
-    ):Response<ArticlesReponse>
+    ):Response<ArticleResponse>
 
     @GET("tags")
     suspend fun getTags() : Response<TagResponse>

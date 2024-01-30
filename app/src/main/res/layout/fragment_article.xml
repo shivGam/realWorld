@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="8dp"
+    android:background="@color/dark_grey"
+    tools:context=".MainActivity">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            style="@style/TextAppearance.AppCompat.Headline">
+            <TextView
+                android:padding="8dp"
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                tools:text="Title"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8sp">
+        <ImageView
+            android:id="@+id/ivAuthor"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:src="@mipmap/ic_avatar"/>
+        <TextView
+            android:id="@+id/tvAuthor"
+            android:padding="8sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            tools:text="Author Name"/>
+
+        <Button
+            android:id="@+id/btnFollow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Follow"/>
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:gravity="start"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                tools:text="Ipsum eos ipsam.\nAperiam quia quis sit fugiat saepe voluptas est.\nDolores et veniam ut.\nQuibusdam voluptatum quis.\nEt omnis ut corporis. Facere beatae delectus ut.\nPossimus voluptas perspiciatis voluptatem nihil sint praesentium.\nSint est nihil voluptates nesciunt voluptatibus temporibus blanditiis.\nOfficiis voluptatem earum sed. Non natus nihil. Et sed dicta eveniet accusamus consequatur.\nUllam voluptas consequatur aut eos ducimus.\nId officia est ut dicta provident beatae ipsa. Dicta quia molestias natus est.\nSit animi inventore a ut ut suscipit.\nEos et et commodi eligendi nihil.\nEa reprehenderit consectetur eum. Similique et quos maiores commodi exercitationem laborum animi qui. Ut atque harum inventore natus facere sed molestiae.\nQuia aliquid ut.\nAnimi sunt rem et sit ullam dolorem ab consequatur modi. Quo perferendis nesciunt.\nDolore dolorem porro omnis voluptatibus consequuntur et expedita suscipit et.\nTempora facere ipsa.\nDolore accusamus soluta officiis eligendi.\nEum quaerat neque eum beatae odio. Voluptatem cumque molestias soluta consequatur aut voluptatibus beatae vel commodi.\nNulla voluptatem aut. Reprehenderit quae quas quos sapiente ullam ut.\nVoluptates non ut." >
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="8sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:text="23 December 2023"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

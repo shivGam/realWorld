@@ -1,17 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     app:startDestination="@id/globalFragment"
     android:id="@+id/feed_navigation">
 
     <fragment
         android:id="@+id/globalFragment"
         android:name="io.realWorld.android.ui.feed.GlobalFeedFragment"
-        android:label="GlobalFeedFragment" />
+        android:label="GlobalFeedFragment">
+        <action
+            android:id="@+id/action_globalFragment_to_articleFragment"
+            app:destination="@id/articleFragment">
+            <argument
+                android:name="ARTICLE_ID"
+                app:argType="string"/>
+        </action>
+    </fragment>
     <fragment
         android:id="@+id/myFeedFragment"
         android:name="io.realWorld.android.ui.feed.MyFeedFragment"
-        android:label="MyFeedFragment" />
+        android:label="MyFeedFragment">
+        <action
+            android:id="@+id/action_myFeedFragment_to_articleFragment"
+            app:destination="@id/articleFragment">
+            <argument
+                android:name="ARTICLE_ID"
+                app:argType="string"/>
+        </action>
+    </fragment>
     <action
         android:id="@+id/gotoGlobalFragment"
         app:destination="@id/globalFragment"
@@ -27,12 +44,18 @@
     <fragment
         android:id="@+id/logInFragment2"
         android:name="io.realWorld.android.ui.auth.LogInFragment"
-        android:label="LogInFragment" />
+        android:label="LogInFragment"
+        tools:layout="@layout/fragment_login"/>
     <action
         android:id="@+id/gotoLoginFragment2"
         app:popUpTo="@id/feed_navigation"
         app:destination="@id/logInFragment2"
         app:enterAnim="@anim/nav_default_pop_enter_anim"
         app:exitAnim="@anim/nav_default_pop_exit_anim" />
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="io.realWorld.android.ui.article.ArticleFragment"
+        android:label="ArticleFragment"
+        tools:layout="@layout/fragment_article"/>
 
 </navigation>

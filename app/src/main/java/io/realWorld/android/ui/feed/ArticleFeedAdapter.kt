@@ -12,7 +12,7 @@ import io.realWorld.android.R
 import io.realWorld.android.databinding.ListItemArticleBinding
 import io.realworld.api.models.entities.Article
 
-class ArticleFeedAdapter :ListAdapter<Article,ArticleFeedAdapter.ArticleViewHolder>(
+class ArticleFeedAdapter(val onArticleClicked:(slug : String) -> Unit) :ListAdapter<Article,ArticleFeedAdapter.ArticleViewHolder>(
     object : DiffUtil.ItemCallback<Article>(){
         override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
             return oldItem === newItem
@@ -43,6 +43,8 @@ class ArticleFeedAdapter :ListAdapter<Article,ArticleFeedAdapter.ArticleViewHold
             tvTitle.text = article.title
             tvDesc.text = article.description
             tvDate.text = "14 Jan 23"
+
+            root.setOnClickListener { onArticleClicked(article.slug) }
         }
     }
 }

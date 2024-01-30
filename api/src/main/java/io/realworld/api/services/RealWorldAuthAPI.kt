@@ -1,7 +1,7 @@
 package io.realworld.api.services
 
 import io.realworld.api.models.requests.UserUpdateRequest
-import io.realworld.api.models.responses.ArticlesReponse
+import io.realworld.api.models.responses.ArticlesResponse
 import io.realworld.api.models.responses.ProfileResponse
 import io.realworld.api.models.responses.UserResponse
 import retrofit2.Response
@@ -38,5 +38,5 @@ interface RealWorldAuthAPI {
     ):Response<ProfileResponse>
 
     @GET("articles/feed")
-    suspend fun getFeedArticles(): Response<ArticlesReponse>
+    suspend fun getFeedArticles(): Response<ArticlesResponse>
 }
