@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import io.realWorld.android.R
 import io.realWorld.android.databinding.ListItemArticleBinding
+import io.realWorld.android.ui.extensions.loadImage
 import io.realworld.api.models.entities.Article
 
 class ArticleFeedAdapter(val onArticleClicked:(slug : String) -> Unit) :ListAdapter<Article,ArticleFeedAdapter.ArticleViewHolder>(
@@ -42,7 +43,8 @@ class ArticleFeedAdapter(val onArticleClicked:(slug : String) -> Unit) :ListAdap
             tvName.text = article.author.username
             tvTitle.text = article.title
             tvDesc.text = article.description
-            tvDate.text = "14 Jan 23"
+            tvDate.text = article.createdAt
+            ivProfile.loadImage(article.author.image)
 
             root.setOnClickListener { onArticleClicked(article.slug) }
         }

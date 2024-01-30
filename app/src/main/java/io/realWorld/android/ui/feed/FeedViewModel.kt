@@ -26,4 +26,5 @@ class FeedViewModel : ViewModel() {
             Log.d("feed","My feed fetched ${it.articlesCount}")
         }
     }
+
 }

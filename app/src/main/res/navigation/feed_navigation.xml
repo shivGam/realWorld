@@ -11,7 +11,8 @@
         android:label="GlobalFeedFragment">
         <action
             android:id="@+id/action_globalFragment_to_articleFragment"
-            app:destination="@id/articleFragment">
+            app:destination="@id/articleFragment"
+            app:popUpTo="@id/globalFragment">
             <argument
                 android:name="ARTICLE_ID"
                 app:argType="string"/>
@@ -23,7 +24,8 @@
         android:label="MyFeedFragment">
         <action
             android:id="@+id/action_myFeedFragment_to_articleFragment"
-            app:destination="@id/articleFragment">
+            app:destination="@id/articleFragment"
+            app:popUpTo="@id/myFeedFragment">
             <argument
                 android:name="ARTICLE_ID"
                 app:argType="string"/>

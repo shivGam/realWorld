@@ -1,6 +1,8 @@
 package io.realworld.api.services
 
+import io.realworld.api.models.requests.UpsertArticleRequest
 import io.realworld.api.models.requests.UserUpdateRequest
+import io.realworld.api.models.responses.ArticleResponse
 import io.realworld.api.models.responses.ArticlesResponse
 import io.realworld.api.models.responses.ProfileResponse
 import io.realworld.api.models.responses.UserResponse
@@ -39,4 +41,10 @@ interface RealWorldAuthAPI {
 
     @GET("articles/feed")
     suspend fun getFeedArticles(): Response<ArticlesResponse>
+
+    @POST("articles")
+    suspend fun createArticle(
+        @Body Article: UpsertArticleRequest
+    ) :Response<ArticleResponse>
+
 }

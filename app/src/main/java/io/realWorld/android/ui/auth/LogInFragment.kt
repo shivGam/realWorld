@@ -25,9 +25,9 @@ class LogInFragment : Fragment() {
     ): View? {
         _binding = FragmentLoginBinding.inflate(inflater,container,false)
         navController?.navigate(R.id.nav_login)
-
         val navController = findNavController()
         _binding?.tvSignUp?.setOnClickListener {
+
             navController.navigate(R.id.action_nav_login_to_nav_signup)
         }
         return _binding?.root

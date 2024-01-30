@@ -15,6 +15,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import io.realWorld.android.databinding.ActivityMainBinding
+import io.realWorld.android.ui.extensions.loadImage
 import io.realworld.api.models.entities.User
 
 class MainActivity : AppCompatActivity() {
@@ -22,6 +23,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private lateinit var authViewModel: AuthViewModel
+    private lateinit var ivDrawer: ImageView
+    private lateinit var tvDrawer: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +40,9 @@ class MainActivity : AppCompatActivity() {
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         val changeLabel = navController.graph.findNode(R.id.nav_feed)
+
+        ivDrawer = navView.getHeaderView(0).findViewById(R.id.ivDrawer)
+        tvDrawer = navView.getHeaderView(0).findViewById(R.id.tvDrawer)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
@@ -52,7 +58,10 @@ class MainActivity : AppCompatActivity() {
             updateDrawer(user)
             Toast.makeText(this, "Logged in as ${user?.username}", Toast.LENGTH_SHORT).show()
             changeLabel?.label = "Welcome, ${user?.username}"
+            ivDrawer.loadImage(user?.image.toString())
+            tvDrawer.text = user?.username
             navController.navigate(R.id.nav_feed)
+
         }
 
     }
@@ -61,6 +70,10 @@ class MainActivity : AppCompatActivity() {
             is User -> {
                 binding.navView.menu.clear()
                 binding.navView.inflateMenu(R.menu.activity_main_logged_in)
+            }
+            else -> {
+                binding.navView.menu.clear()
+                binding.navView.inflateMenu(R.menu.activity_main_drawer)
             }
         }
 

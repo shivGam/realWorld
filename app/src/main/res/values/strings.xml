@@ -17,4 +17,6 @@
     <string name="nav_feed">Home</string>
     <string name="menu_profile">Update Profile</string>
     <string name="args_article_id">ARTICLE_ID</string>
+    <string name="menu_fav">Favourite</string>
+    <string name="menu_create">New Article</string>
 </resources>

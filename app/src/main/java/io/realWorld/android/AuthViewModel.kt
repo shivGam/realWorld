@@ -23,6 +23,9 @@ class AuthViewModel : ViewModel() {
             _user.postValue(it.user)
         }
     }
+    fun logout(){
+        _user.postValue(null)
+    }
     fun update(
         bio:String?,
         email: String?,
