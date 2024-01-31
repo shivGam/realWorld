@@ -1,100 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="8dp"
     android:background="@color/dark_grey"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="12dp"
     tools:context=".MainActivity">
-        <LinearLayout
+
+
+    <ImageView
+        android:id="@+id/ivAuthor"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="4dp"
+        android:src="@mipmap/ic_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="8sp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        tools:text="23 December 2023" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="560dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle">
+
+        <TextView
+            android:id="@+id/tvBody"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center_horizontal"
-            style="@style/TextAppearance.AppCompat.Headline">
-
-        </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8sp">
-        <ImageView
-            android:id="@+id/ivAuthor"
-            android:layout_width="42dp"
-            android:layout_height="42dp"
-            android:src="@mipmap/ic_avatar"/>
-        <TextView
-            android:id="@+id/tvAuthor"
-            android:padding="8sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:fontFamily="@font/pt_serif_italic"
+            android:gravity="start"
+            android:padding="10sp"
             android:textColor="@color/white"
             android:textSize="18sp"
-            tools:text="Author Name"
-            android:paddingEnd="52dp"/>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/btnFollow"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Follow"/>
+            android:textStyle="italic"
+            tools:text="Ipsum eos ipsam.\nAperiam quia quis sit fugiat saepe voluptas est.\nDolores et veniam ut.\nQuibusdam voluptatum quis.\nEt omnis ut corporis. Facere beatae delectus ut.\nPossimus voluptas perspiciatis voluptatem nihil sint praesentium.\nSint est nihil voluptates nesciunt voluptatibus temporibus blanditiis.\nOfficiis voluptatem earum sed. Non natus nihil. Et sed dicta eveniet accusamus consequatur.\nUllam voluptas consequatur aut eos ducimus.\nId officia est ut dicta provident beatae ipsa. Dicta quia molestias natus est.\nSit animi inventore a ut ut suscipit.\nEos et et commodi eligendi nihil.\nEa reprehenderit consectetur eum. Similique et quos maiores commodi exercitationem laborum animi qui. Ut atque harum inventore natus facere sed molestiae.\nQuia aliquid ut.\nAnimi sunt rem et sit ullam dolorem ab consequatur modi. Quo perferendis nesciunt.\nDolore dolorem porro omnis voluptatibus consequuntur et expedita suscipit et.\nTempora facere ipsa.\nDolore accusamus soluta officiis eligendi.\nEum quaerat neque eum beatae odio. Voluptatem cumque molestias soluta consequatur aut voluptatibus beatae vel commodi.\nNulla voluptatem aut. Reprehenderit quae quas quos sapiente ullam ut.\nVoluptates non ut." />
+    </ScrollView>
 
-            <ImageButton
-                android:id="@+id/btnFav"
-                android:layout_width="46dp"
-                android:layout_height="44dp"
-                android:backgroundTint="@color/white"
-                android:src="@drawable/ic_baseline_favorite_24"/>
-        </LinearLayout>
-
-    </LinearLayout>
     <TextView
-        android:padding="10dp"
+        android:id="@+id/tvAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/ivAuthor"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Author Name" />
+
+    <Button
+        android:id="@+id/btnFollow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="Follow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:fontFamily="monospace"
-        tools:text="Title"
+        android:gravity="start"
+        android:padding="10dp"
         android:textColor="@color/white"
-        android:gravity="left"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/black">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/tvBody"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10sp"
-                android:gravity="start"
-                android:textSize="18sp"
-                android:textColor="@color/white"
-                android:textStyle="italic"
-                tools:text="Ipsum eos ipsam.\nAperiam quia quis sit fugiat saepe voluptas est.\nDolores et veniam ut.\nQuibusdam voluptatum quis.\nEt omnis ut corporis. Facere beatae delectus ut.\nPossimus voluptas perspiciatis voluptatem nihil sint praesentium.\nSint est nihil voluptates nesciunt voluptatibus temporibus blanditiis.\nOfficiis voluptatem earum sed. Non natus nihil. Et sed dicta eveniet accusamus consequatur.\nUllam voluptas consequatur aut eos ducimus.\nId officia est ut dicta provident beatae ipsa. Dicta quia molestias natus est.\nSit animi inventore a ut ut suscipit.\nEos et et commodi eligendi nihil.\nEa reprehenderit consectetur eum. Similique et quos maiores commodi exercitationem laborum animi qui. Ut atque harum inventore natus facere sed molestiae.\nQuia aliquid ut.\nAnimi sunt rem et sit ullam dolorem ab consequatur modi. Quo perferendis nesciunt.\nDolore dolorem porro omnis voluptatibus consequuntur et expedita suscipit et.\nTempora facere ipsa.\nDolore accusamus soluta officiis eligendi.\nEum quaerat neque eum beatae odio. Voluptatem cumque molestias soluta consequatur aut voluptatibus beatae vel commodi.\nNulla voluptatem aut. Reprehenderit quae quas quos sapiente ullam ut.\nVoluptates non ut." >
-            </TextView>
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/tvAuthor"
+        tools:layout_editor_absoluteX="12dp"
+        tools:text="Title" />
 
-            <TextView
-                android:id="@+id/tvDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:padding="8sp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                tools:text="23 December 2023"/>
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:backgroundTint="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_favorite_24"
+        app:fabSize="normal"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
