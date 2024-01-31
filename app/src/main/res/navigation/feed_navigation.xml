@@ -54,10 +54,17 @@
         app:destination="@id/logInFragment2"
         app:enterAnim="@anim/nav_default_pop_enter_anim"
         app:exitAnim="@anim/nav_default_pop_exit_anim" />
+
     <fragment
         android:id="@+id/articleFragment"
         android:name="io.realWorld.android.ui.article.ArticleFragment"
         android:label="ArticleFragment"
         tools:layout="@layout/fragment_article"/>
+    <action
+        android:id="@+id/gotoFavFeed"
+        app:popUpTo="@id/feed_navigation"
+        app:destination="@id/nav_fav"
+        app:enterAnim="@anim/nav_default_pop_enter_anim"
+        app:exitAnim="@anim/nav_default_pop_exit_anim" />
 
 </navigation>

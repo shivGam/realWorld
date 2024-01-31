@@ -37,7 +37,23 @@
     <fragment
         android:id="@+id/nav_create"
         android:name="io.realWorld.android.ui.article.CreateArticleFragment"
-        android:label="CreateArticleFragment"
+        android:label="Create Article"
         tools:layout="@layout/fragment_cr"/>
+
+    <fragment
+        android:id="@+id/nav_fav"
+        android:name="io.realWorld.android.ui.feed.FavFeedFragment"
+        android:label="Favourites"
+        tools:layout="@layout/feed_fragment">
+        <action
+            android:id="@+id/action_nav_fav_to_articleFragment2"
+            app:destination="@id/articleFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleFragment2"
+        android:name="io.realWorld.android.ui.article.ArticleFragment"
+        android:label="ArticleFragment"
+        tools:layout="@layout/fragment_article"/>
+
 
 </navigation>

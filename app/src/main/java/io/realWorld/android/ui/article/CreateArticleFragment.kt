@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import io.realWorld.android.R
 import io.realWorld.android.databinding.FragmentArticleBinding
 import io.realWorld.android.databinding.FragmentCrBinding
@@ -41,6 +42,7 @@ class CreateArticleFragment:Fragment() {
                         tagList = etTag.text.toString().split("\\s".toRegex())
                     )
                     Toast.makeText(requireContext(),"Article Published",Toast.LENGTH_SHORT).show()
+                    findNavController().navigate(R.id.nav_feed)
                 }
             }
 

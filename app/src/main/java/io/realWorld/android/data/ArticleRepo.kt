@@ -4,6 +4,8 @@ import io.realworld.api.RealWorldClient
 import io.realworld.api.models.entities.Article
 import io.realworld.api.models.entities.ArticleData
 import io.realworld.api.models.requests.UpsertArticleRequest
+import io.realworld.api.models.responses.ArticlesResponse
+import retrofit2.Response
 import java.lang.invoke.TypeDescriptor
 
 object ArticleRepo {
@@ -12,6 +14,19 @@ object ArticleRepo {
     suspend fun getGlobalFeed() = api.getArticles()
     suspend fun getMyFeed() = authApi.getFeedArticles()
 
+    suspend fun getFavourites(): Response<ArticlesResponse> {
+        val response = api.getArticles(favourited = "true")
+
+        return if (response.isSuccessful) {
+            val favoritedArticles = response.body()?.articles?.filter { it.favorited }
+            val filteredResponse = favoritedArticles?.let { response.body()?.copy(articles = it) }
+            Response.success(filteredResponse)
+        } else {
+            // Handle error
+            response
+        }
+
+    }
     suspend fun createArticle(
         title : String?,
         description : String?,

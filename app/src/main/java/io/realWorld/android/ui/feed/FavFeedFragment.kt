@@ -32,7 +32,7 @@ class FavFeedFragment:Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //viewModel.fetchMyFeed() TODO : fetchFav()
+        viewModel.fetchFav()
 
         viewModel.feed.observe(viewLifecycleOwner) {
             feedAdapter.submitList(it)
@@ -40,7 +40,7 @@ class FavFeedFragment:Fragment() {
     }
     private fun openArticle(articleId: String) {
         findNavController().navigate(
-            R.id.action_myFeedFragment_to_articleFragment,
+            R.id.action_nav_fav_to_articleFragment2,
             bundleOf(
                 resources.getString(R.string.args_article_id) to articleId
             )

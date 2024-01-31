@@ -27,4 +27,11 @@ class FeedViewModel : ViewModel() {
         }
     }
 
+    fun fetchFav()= viewModelScope.launch {
+        ArticleRepo.getFavourites().body()?.let{
+            _feed.postValue(it.articles)
+            Log.d("feed","favourite fetched ${it.articlesCount}")
+        }
+    }
+
 }
