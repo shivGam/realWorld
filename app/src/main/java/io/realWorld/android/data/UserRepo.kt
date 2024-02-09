@@ -33,4 +33,9 @@ object UserRepo {
         )))
         return response.body()
     }
+
+    suspend fun getCurrentUser(token: String) :User? {
+        RealWorldClient.authToken = token
+        return authApi.getCurrentUser().body()?.user
+    }
 }
