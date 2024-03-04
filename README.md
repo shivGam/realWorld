@@ -25,7 +25,4 @@
 ## Contributors
 
 - **Shivdatt Jangam**: [GitHub](https://github.com/shivGam)
-
-## Acknowledgments
-
 - Special thanks to Arnav Gupta
